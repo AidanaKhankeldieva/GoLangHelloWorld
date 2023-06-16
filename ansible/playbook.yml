@@ -1,16 +1,16 @@
 - name: Deploy Go app
-  hosts: 18.214.159.174
+  hosts: my_ec2_instance
   gather_facts: false
 
   tasks:
     - name: Pull Docker image
       docker_image:
-        name: your-dockerhub-username/your-repo-name:latest
+        name: aidanakhankeldieva/golang
         source: pull
 
     - name: Run Docker container
       docker_container:
         name: go-app
-        image: your-dockerhub-username/your-repo-name:latest
+        image: aidanakhankeldieva/golang
         state: started
         restart_policy: always

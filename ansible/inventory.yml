@@ -1,0 +1,6 @@
+all:
+  hosts:
+    my_ec2_instance:
+      ansible_host: 18.214.159.174
+      ansible_user: aidana
+      ansible_ssh_private_key_file: /Users/aidanakhankeldieva/Downloads/MyEC2Key.pem
