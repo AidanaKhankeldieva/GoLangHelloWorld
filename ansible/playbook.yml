@@ -3,6 +3,12 @@
   gather_facts: false
 
   tasks:
+    - name: Install Docker
+      become: true
+      apt:
+        name: docker.io
+        state: present
+
     - name: Pull Docker image
       docker_image:
         name: aidanakhankeldieva/golang
