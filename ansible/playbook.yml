@@ -5,20 +5,20 @@
   tasks:
     - name: Install Docker
       become: true
-      apt:
+      dnf:
         name: docker.io
         state: present
 
-    - name: Update apt cache
-      raw: sudo apt-get update
-      register: apt_update
-      changed_when: false
+    # - name: Update apt cache
+    #   raw: sudo apt-get update
+    #   register: apt_update
+    #   changed_when: false
 
-    - name: Install python3-apt
-      apt:
-        name: python3-apt
-        state: present
-      when: apt_update is success
+    # - name: Install python3-apt
+    #   apt:
+    #     name: python3-apt
+    #     state: present
+    #   when: apt_update is success
 
     - name: Pull Docker image
       docker_image:
