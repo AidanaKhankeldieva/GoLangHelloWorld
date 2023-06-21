@@ -31,7 +31,6 @@
         image: aidanakhankeldieva/golang
         state: started
       register: docker_container_result
-      restart_policy: always
 
     - name: Print Docker container information
       debug:
