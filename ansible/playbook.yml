@@ -6,19 +6,21 @@
     - name: Install Docker
       become: true
       dnf:
-        name: docker.io
+        name: docker
         state: present
 
-    # - name: Update apt cache
-    #   raw: sudo apt-get update
-    #   register: apt_update
-    #   changed_when: false
+    - name: Update DNF cache
+      dnf:
+        name: ""
+        update_cache: yes
+      register: dnf_update
+      changed_when: false
 
-    # - name: Install python3-apt
-    #   apt:
-    #     name: python3-apt
-    #     state: present
-    #   when: apt_update is success
+    - name: Install python3-dnf
+      dnf:
+        name: python3-dnf
+        state: present
+      when: dnf_update is success
 
     - name: Pull Docker image
       docker_image:
