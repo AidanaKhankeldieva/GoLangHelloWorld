@@ -23,6 +23,12 @@
         state: present
       when: dnf_update is success
 
+    - name: Start Docker service
+      service:
+        name: docker
+        state: started
+      become: true
+
     - name: Pull Docker image
       docker_image:
         name: aidanakhankeldieva/golang
