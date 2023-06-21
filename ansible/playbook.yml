@@ -1,6 +1,7 @@
 - name: Deploy Go app
   hosts: my_ec2_instance
   gather_facts: false
+  become: true
 
   tasks:
     - name: Install Docker
