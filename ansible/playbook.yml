@@ -48,10 +48,14 @@
 
     - name: Check Go app health
       uri:
-        url: http://18-214-159-174:8080/health
+        url: http://ec2-18-214-159-174.compute-1.amazonaws.com:8080/health
         method: GET
         return_content: yes
       register: health_check_result
 
-    - debug:
-        var: health_check_result.status
+    - name: Verify Go app health
+      assert:
+        that:
+          - health_check_result.status == 200
+        fail_msg: "Go app health check failed"
+        success_msg: "Go app is running"
