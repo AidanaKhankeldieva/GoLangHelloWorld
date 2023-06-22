@@ -31,8 +31,9 @@
 
     - name: Pull Docker image
       docker_image:
-        name: aidanakhankeldieva/golang:latest
+        name: aidanakhankeldieva/golang
         source: pull
+        tag: latest
 
     - name: Run Docker container
       docker_container:
