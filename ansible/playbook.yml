@@ -45,3 +45,13 @@
     - name: Print Docker container information
       debug:
         var: docker_container_result
+
+    - name: Check Go app health
+      uri:
+        url: http://18-214-159-174:8080/health
+        method: GET
+        return_content: yes
+      register: health_check_result
+
+    - debug:
+        var: health_check_result.status
