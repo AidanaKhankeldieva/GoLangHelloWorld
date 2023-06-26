@@ -1,6 +1,6 @@
 all:
   hosts:
     my_ec2_instance:
-      ansible_host: ec2-44-197-214-204.compute-1.amazonaws.com
+      ansible_host: ec2-23-23-153-86.compute-1.amazonaws.com
       ansible_user: ec2-user
       # ansible_ssh_private_key_file: "/home/runner/MyEC2Key.pem"
