@@ -41,7 +41,7 @@
         image: aidanakhankeldieva/golang
         state: started
         ports:
-          - "8080:8080"
+          - 8080:8080
       register: docker_container_result
 
     - name: Print Docker container information
